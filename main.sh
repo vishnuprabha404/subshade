@@ -78,7 +78,21 @@ check_requirements() {
 #starting
 check_requirements                                                #check if required tools are installed
 dom=$1                                                            #reading domain using command line argument
-echo -e "\n${blue} WELCOME ${red}$USER \n\n${blue} Today is ${cyan}$(date)" #greetings
+# Display banner
+echo -e "${cyan}"
+cat << "EOF"
+   _____ __  ______  _____ __  _____    ____  ______
+  / ___// / / / __ )/ ___// / / /   |  / __ \/ ____/
+  \__ \/ / / / __  |\__ \/ /_/ / /| | / / / / __/   
+ ___/ / /_/ / /_/ /___/ / __  / ___ |/ /_/ / /___   
+/____/\____/_____//____/_/ /_/_/  |_/_____/_____/   
+                                                    
+EOF
+echo -e "${reset}"
+echo -e "${blue}═══════════════════════════════════════════════════════════${reset}"
+echo -e "${yellow}            Subdomain Enumeration & Discovery Tool${reset}"
+echo -e "${blue}═══════════════════════════════════════════════════════════${reset}"
+echo -e "${green} Welcome ${red}$USER${reset} | ${blue}Date: ${cyan}$(date +"%Y-%m-%d %H:%M:%S")${reset}" #greetings
 echo -e "\n${yellow} Initializing ..."
 echo -e "\n${yellow} Gathering subdomains of ${reset}$dom"
 if [[ -z $dom ]]; then                                            #checking whether the domain is empty

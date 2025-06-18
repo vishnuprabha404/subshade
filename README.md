@@ -47,7 +47,7 @@ go install github.com/tomnomnom/httprobe@latest
 
 ### System Requirements
 
-- **Operating System**: Linux/macOS/WSL (Windows Subsystem for Linux)
+- **Operating System**: Linux/macOS/WSL/Windows (Git Bash)
 - **Shell**: Bash 4.0 or higher
 - **Go**: Version 1.19+ (for installing tools)
 
@@ -163,10 +163,69 @@ Check 'example.com-subdomains.txt' for the list of active subdomains
 
 ### Setting up Go PATH (if needed)
 ```bash
-# Add to your ~/.bashrc or ~/.zshrc
+# Linux/macOS - Add to your ~/.bashrc or ~/.zshrc
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Windows Git Bash - Add to your ~/.bashrc
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ```
+
+### Manual Installation for Windows/Git Bash Users
+
+If you're using Git Bash on Windows and the automatic installation fails, follow these steps:
+
+#### Option 1: Download Go Installer (Recommended)
+1. **Visit the Go downloads page**: https://golang.org/dl/
+2. **Download the Windows installer** (`.msi` file) for your system architecture
+3. **Run the installer** and follow the setup wizard
+4. **Restart Git Bash** after installation
+5. **Verify installation**:
+   ```bash
+   go version
+   ```
+
+#### Option 2: Using Package Managers
+If you have Chocolatey or Scoop installed:
+
+**Chocolatey:**
+```bash
+# Open PowerShell as Administrator
+choco install golang -y
+```
+
+**Scoop:**
+```bash
+# In PowerShell or Git Bash
+scoop install go
+```
+
+#### Manual Tool Installation
+After Go is installed, manually install the required tools:
+```bash
+# Install assetfinder
+go install github.com/tomnomnom/assetfinder@latest
+
+# Install httprobe  
+go install github.com/tomnomnom/httprobe@latest
+
+# Verify installations
+assetfinder --help
+httprobe --help
+```
+
+#### Common Windows Issues
+
+1. **"go: command not found" after installation**
+   - Restart Git Bash completely
+   - Check if Go is in your PATH: `echo $PATH`
+   - Manually add Go to PATH if needed
+
+2. **Tools not found after installation**
+   - Check if `$HOME/go/bin` is in your PATH
+   - Add it manually: `export PATH=$PATH:$HOME/go/bin`
+   - Add to ~/.bashrc to make it permanent
 
 ## Contributing
 

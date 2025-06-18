@@ -1,0 +1,31 @@
+# SubShade - Output Files and Temporary Data
+# Ignore all subdomain enumeration result files
+*-subdomains.txt
+
+# Ignore temporary folders created during execution
+temp/
+tmp/
+
+# Ignore common temporary files
+*.tmp
+*.log
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore backup files
+*.bak
+*.backup 

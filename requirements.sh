@@ -45,6 +45,12 @@ detect_package_manager() {
         echo "pacman"
     elif command_exists brew; then
         echo "brew"
+    elif command_exists choco; then
+        echo "choco"
+    elif command_exists scoop; then
+        echo "scoop"
+    elif [[ "$OSTYPE" == "msys" || "$MSYSTEM" == "MINGW64" || "$MSYSTEM" == "MINGW32" ]]; then
+        echo "windows"
     else
         echo "unknown"
     fi
@@ -72,6 +78,35 @@ install_go() {
             ;;
         "brew")
             brew install go
+            ;;
+        "choco")
+            choco install golang -y
+            ;;
+        "scoop")
+            scoop install go
+            ;;
+        "windows")
+            print_warning "Detected Git Bash/MSYS environment on Windows"
+            print_info "For Windows users, please choose one of these options:"
+            echo
+            echo "Option 1 - Download Go installer:"
+            echo "  1. Visit: https://golang.org/dl/"
+            echo "  2. Download the Windows installer (.msi file)"
+            echo "  3. Run the installer and follow the setup wizard"
+            echo "  4. Restart Git Bash after installation"
+            echo
+            echo "Option 2 - Use Chocolatey (if installed):"
+            echo "  choco install golang"
+            echo
+            echo "Option 3 - Use Scoop (if installed):"
+            echo "  scoop install go"
+            echo
+            read -p "Have you installed Go using one of the above methods? (y/n): " -n 1 -r
+            echo
+            if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+                print_error "Please install Go first, then run this script again"
+                return 1
+            fi
             ;;
         *)
             print_error "Unsupported package manager. Please install Go manually from https://golang.org/dl/"
