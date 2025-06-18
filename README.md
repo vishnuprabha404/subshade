@@ -62,21 +62,36 @@ The following tools are typically pre-installed on most Unix-like systems:
 
 ## Installation
 
+### Option 1: Automatic Installation (Recommended)
+
 1. **Clone or download the script:**
    ```bash
    # If using git
    git clone <your-repo-url>
    cd subshade
    
-   # Or download main.sh directly
+   # Or download main.sh and requirements.sh directly
    ```
 
-2. **Make the script executable:**
+2. **Make the scripts executable:**
    ```bash
-   chmod +x main.sh
+   chmod +x main.sh requirements.sh
    ```
 
-3. **Verify dependencies are installed:**
+3. **Run SubShade - it will auto-install missing tools:**
+   ```bash
+   ./main.sh example.com
+   ```
+   If tools are missing, SubShade will automatically detect this and offer to install them for you!
+
+### Option 2: Manual Installation
+
+1. **Install requirements manually:**
+   ```bash
+   ./requirements.sh
+   ```
+
+2. **Or verify dependencies are installed:**
    ```bash
    # Check if tools are available
    which assetfinder
