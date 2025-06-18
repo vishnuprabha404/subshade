@@ -237,7 +237,7 @@ main() {
     
     echo
     print_success "Installation complete!"
-    print_info "You can now run SubShade with: ./main.sh <domain>"
+    print_info "You can now run SubShade with: ./ss.sh <domain>"
     
     if [[ -n "$GOPATH" ]] && [[ ":$PATH:" != *":$GOPATH/bin:"* ]]; then
         echo

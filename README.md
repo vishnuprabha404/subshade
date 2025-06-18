@@ -70,17 +70,17 @@ The following tools are typically pre-installed on most Unix-like systems:
    git clone <your-repo-url>
    cd subshade
    
-   # Or download main.sh and requirements.sh directly
+   # Or download ss.sh and requirements.sh directly
    ```
 
 2. **Make the scripts executable:**
    ```bash
-   chmod +x main.sh requirements.sh
+   chmod +x ss.sh requirements.sh
    ```
 
 3. **Run SubShade - it will auto-install missing tools:**
    ```bash
-   ./main.sh example.com
+   ./ss.sh example.com
    ```
    If tools are missing, SubShade will automatically detect this and offer to install them for you!
 
@@ -102,16 +102,16 @@ The following tools are typically pre-installed on most Unix-like systems:
 
 ### Basic Usage
 ```bash
-./main.sh <domain>
+./ss.sh <domain>
 ```
 
 ### Examples
 ```bash
 # Find subdomains for example.com
-./main.sh example.com
+./ss.sh example.com
 
 # Find subdomains for a specific organization
-./main.sh tesla.com
+./ss.sh tesla.com
 ```
 
 ### Output
@@ -162,7 +162,7 @@ Check 'example.com-subdomains.txt' for the list of active subdomains
    - Ensure your `$GOPATH/bin` is in your `$PATH`
 
 3. **"Permission denied"**
-   - Make sure the script is executable: `chmod +x main.sh`
+   - Make sure the script is executable: `chmod +x ss.sh`
 
 4. **No results found**
    - The domain might not have publicly discoverable subdomains
