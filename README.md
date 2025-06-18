@@ -122,13 +122,21 @@ The script will:
 
 Example output:
 ```
-WELCOME user
+   _____ __  ______  _____ __  _____    ____  ______
+  / ___// / / / __ )/ ___// / / /   |  / __ \/ ____/
+  \__ \/ / / / __  |\__ \/ /_/ / /| | / / / / __/   
+ ___/ / /_/ / /_/ /___/ / __  / ___ |/ /_/ / /___   
+/____/\____/_____//____/_/ /_/_/  |_/_____/_____/   
+                                                    
 
-Today is Mon Jan 15 10:30:45 2024
+═══════════════════════════════════════════════════════════
+            Subdomain Enumeration & Discovery Tool
+═══════════════════════════════════════════════════════════
+ Welcome user | Date: 2024-01-15 10:30:45
 
-Initializing ...
+ Initializing ...
 
-Gathering subdomains of example.com
+ Gathering subdomains of example.com
 
 Total number of subdomains found : 25
 
