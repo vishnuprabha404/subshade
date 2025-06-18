@@ -14,7 +14,12 @@ SubShade is a bash script for automated subdomain discovery and validation. It f
 
 Before running SubShade, you need to install the following tools:
 
-### Required Tools
+### Required Tools List
+- **assetfinder** - Subdomain discovery tool
+- **httprobe** - HTTP/HTTPS probe for checking live subdomains
+- **Go** - Programming language (required for installing the above tools)
+
+### Tool Installation Details
 
 #### 1. assetfinder
 A tool for finding subdomains using various passive sources.
